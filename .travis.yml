@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+- '7'
+deploy:
+  - provider: script
+    script: vrtDeploy.sh $FTP_USER $FTP_PASSWORD $TRAVIS_PULL_REQUEST
+    on:
+      all_branches: true
