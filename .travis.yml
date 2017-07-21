@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '7'
+before_script: 
+  - chmod +x deploy.sh
 after_success:
   - ./deploy.sh $FTP_USER $FTP_PASSWORD $TRAVIS_PULL_REQUEST
 env:
