@@ -1,11 +1,7 @@
 language: node_js
 node_js:
 - '7'
-deploy:
-- provider: script
-  script: deploy.sh $FTP_USER $FTP_PASSWORD $TRAVIS_PULL_REQUEST
-  on:
-    all_branches: true
+after_success: deploy.sh $FTP_USER $FTP_PASSWORD $TRAVIS_PULL_REQUEST
 env:
   global:
   - secure: xQxWZb3tyRL9Lm++B+TwUnXDUWQApYF1M5Xo5T9vjzJ+1R+3Dl+U14BM8WynrrBvkw/ZtUFTECEmRshORFXrLdjknAJHEnq+YndPSfu+s0P5VhkpBl91a3gIsl+AyEMCmNFksaAP6FIW2NCbXPA6pcTd3nB1TQ/3gSphTg3hvrXHtrO9f95xQp+Pbg812/JgMiw6qLL97z/W3xN/ak6GPDima1hyiBh3EpFPFEiIHlFIhccScRGT3kZkOEqq1BHxpj2nCMhl6oDQ92CvExwPcRDP75olbbgNTmULiFF5NT39N1bAs4FnUnYabONLp3n+BYbzs8n1ONvYS0FZOGQVQpJSgJMgpFKQtnMeAbyOHPeuuqD/SWDGdk9fO4rlanN+VQBksOQLQH6VtM75C41dXyEnbq/7js/1vyJGPx9UuFAlSdn6nRelWgJpOcbNz+C784k0NlGq3qyD9RyWXKxKgUWBIJ7ZHLlzSuxdQCMmPIujQKZv0czaiuLtFWlnjDgtcfLy3IghjPH2yINd6fg2r8WdTioehexLWasrHTB+Ia33K0V62Kkp8VJiTS6jwsTIBy53ud5RngkbIENB/VO4QZQO/0GTNPJIhhm+wRg63ty7I0+LbuMHOmf+AkVyZPZ2C55uIPr6NKzLxJW3Y8Mi0m5DEGK+jtBQyutxK8YFiOc=
